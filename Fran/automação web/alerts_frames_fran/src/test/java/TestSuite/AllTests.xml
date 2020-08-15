@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name ="Alltestes" verbose ="1    ">
+    <test name ="Alerts e Frames">
+        <packages>
+            <package name="TestCases" />
+        </packages>
+    </test>
+</suite>
+
+
+<!--<suite name ="Classes" >-->
+<!--<test name ="Alerts e Frames">-->
+<!--    <classes>-->
+<!--        <class name="TestCases.AlertsJavaScriptTestCase" />-->
+<!--        <class name="TestCases.FakeAlertsTestCase" />-->
+<!--        <class name="TestCases.FramesTestCase" />-->
+<!--        <class name="TestCases.IframeTestCase" />-->
+<!--    </classes>-->
+<!--</test>-->
+<!--</suite>-->
