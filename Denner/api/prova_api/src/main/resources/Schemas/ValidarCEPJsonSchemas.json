@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "cep": "91060-900",
+      "logradouro": "Avenida Assis Brasil 3940",
+      "complemento": "",
+      "bairro": "São Sebastião",
+      "localidade": "Porto Alegre",
+      "uf": "RS",
+      "unidade": "",
+      "ibge": "4314902",
+      "gia": ""
+    }
+  ],
+  "required": [
+    "cep",
+    "logradouro",
+    "complemento",
+    "bairro",
+    "localidade",
+    "uf",
+    "unidade",
+    "ibge",
+    "gia"
+  ],
+  "properties": {
+    "cep": {
+      "$id": "#/properties/cep",
+      "type": "string",
+      "title": "The cep schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "91060-900"
+      ]
+    },
+    "logradouro": {
+      "$id": "#/properties/logradouro",
+      "type": "string",
+      "title": "The logradouro schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Avenida Assis Brasil 3940"
+      ]
+    },
+    "complemento": {
+      "$id": "#/properties/complemento",
+      "type": "string",
+      "title": "The complemento schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "bairro": {
+      "$id": "#/properties/bairro",
+      "type": "string",
+      "title": "The bairro schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "São Sebastião"
+      ]
+    },
+    "localidade": {
+      "$id": "#/properties/localidade",
+      "type": "string",
+      "title": "The localidade schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Porto Alegre"
+      ]
+    },
+    "uf": {
+      "$id": "#/properties/uf",
+      "type": "string",
+      "title": "The uf schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "RS"
+      ]
+    },
+    "unidade": {
+      "$id": "#/properties/unidade",
+      "type": "string",
+      "title": "The unidade schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "ibge": {
+      "$id": "#/properties/ibge",
+      "type": "string",
+      "title": "The ibge schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "4314902"
+      ]
+    },
+    "gia": {
+      "$id": "#/properties/gia",
+      "type": "string",
+      "title": "The gia schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    }
+  },
+  "additionalProperties": true
+}
