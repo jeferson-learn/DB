@@ -1,7 +1,11 @@
 package XML;
 
+import io.restassured.internal.path.xml.NodeImpl;
 import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -50,4 +54,41 @@ public class userXMLTest {
         ;
     }
 
+    @Test
+    public void devoFazerPesquisasAvancadaXMLEJava(){
+//        String nome =
+//        Object path =
+//        ArrayList<String> nomes =
+        ArrayList<NodeImpl> nomes1 =
+        given()
+        .when()
+                .get("https://restapi.wcaquino.me/usersXML")
+        .then()
+                .statusCode(200)
+//                .extract().path("users.user.name.findAll { it.toString().startsWith('Maria') }") *String nome*
+                .extract().path("users.user.name.findAll { it.toString().contains('n')}")
+        ;
+
+//        Assert.assertEquals("Maria Joaquina".toUpperCase(), nome.toUpperCase());
+//        System.out.println(path);
+//        System.out.println(nomes);
+//        Assert.assertEquals(2, nomes.size());
+        Assert.assertEquals("Maria Joaquina".toUpperCase(), nomes1.get(0).toString().toUpperCase());
+//        Assert.assertTrue("ANA JULIA", equalsIgnoreCase(nomes1.get(1).toString()));
+
+    }
+
+    @Test
+    public void devoFazerPesquisasAvancadaComPath(){
+                given()
+                .when()
+                        .get("https://restapi.wcaquino.me/usersXML")
+                .then()
+                        .statusCode(200)
+                        .body(hasXPath("count(/users/user)", is("3")))
+                        .body(hasXPath("/users/user[@id = '1']"))
+                        .body(hasXPath("//user[@id = '2']"))
+                        .body(hasXPath("//name[text() = 'Luizinho']/../../name", is("Ana Julia")))
+                ;
+    }
 }
