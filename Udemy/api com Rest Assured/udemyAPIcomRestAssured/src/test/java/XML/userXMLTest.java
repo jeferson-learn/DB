@@ -46,7 +46,7 @@ public class userXMLTest {
                 .body("users.user.salary.find { it != null }", is("1234.5678"))
                 .body("users.user.salary.find { it != null }.toDouble()", is(1234.5678d))
                 .body("users.user.age.collect { it.toInteger() * 2 }", hasItems(40, 50, 60))
-                .body("users.user.findAll { it.toString().startsWith('Maria') }.collect { it.toString().toUpperCase() }", is("MARIA JOAQUINA"))
+                .body("users.user.name.findAll { it.toString().startsWith('Maria') }.collect { it.toString().toUpperCase() }", is("MARIA JOAQUINA"))
         ;
     }
 
