@@ -1,8 +1,10 @@
 package XML;
 
+import io.restassured.RestAssured;
 import io.restassured.internal.path.xml.NodeImpl;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,11 +14,19 @@ import static org.hamcrest.Matchers.*;
 
 public class userXMLTest {
 
+    @BeforeClass
+    public static void setUp(){
+        baseURI = "https://restapi.wcaquino.me";
+        port = 80;
+//        basePath = "";
+    }
+
     @Test
     public void devoTrabalharComXML(){
         given()
+                .log().all()
         .when()
-                .get("https://restapi.wcaquino.me/usersXML/3")
+                .get("/usersXML/3")
         .then()
                 .statusCode(200)
                 .rootPath("user")
@@ -89,6 +99,15 @@ public class userXMLTest {
                         .body(hasXPath("/users/user[@id = '1']"))
                         .body(hasXPath("//user[@id = '2']"))
                         .body(hasXPath("//name[text() = 'Luizinho']/../../name", is("Ana Julia")))
+                        .body(hasXPath("//name[text() = 'Ana Julia']/following-sibling::filhos", allOf(containsString("Zezinho"), containsString("Luizinho"))))
+                        .body(hasXPath("/users/user/name", is("João da Silva")))
+                        .body(hasXPath("//name", is("João da Silva")))
+                        .body(hasXPath("/users/user[2]/name", is("Maria Joaquina")))
+                        .body(hasXPath("/users/user[last()]/name", is("Ana Julia")))
+                        .body(hasXPath("count(/users/user/name[contains(., 'n')])", is("2")))
+                        .body(hasXPath("//user[ age < 24 ]/name", is("Ana Julia")))
+                        .body(hasXPath("//user[ age > 20 and age < 30 ]/name", is("Maria Joaquina")))
+                        .body(hasXPath("//user[ age > 20 ] [ age < 30 ]/name", is("Maria Joaquina")))
                 ;
     }
 }
