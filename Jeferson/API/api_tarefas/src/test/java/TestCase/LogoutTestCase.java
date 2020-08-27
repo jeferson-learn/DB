@@ -1,12 +1,12 @@
 package TestCase;
 
-import BaseTest.LoginBaseTest;
+import BaseTest.LogarBaseTest;
 import Utils.ObjectsUtils;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class LogoutTestCase extends LoginBaseTest {
+public class LogoutTestCase extends LogarBaseTest {
 
     @Test
     public void logout(){
