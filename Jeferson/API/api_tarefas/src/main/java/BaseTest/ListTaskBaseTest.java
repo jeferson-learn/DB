@@ -8,13 +8,14 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 public class ListTaskBaseTest extends EndPoints {
 
     protected static RequestSpecification requestSpec;
     protected static ResponseSpecification responseSpec;
 
-    @BeforeAll
+    @BeforeEach
     public void setUp(){
         String token = ObjectsUtils.getPropertiesData("dadosInformacao", "token");
         requestSpec = new RequestSpecBuilder()
