@@ -24,7 +24,6 @@ public class LoginBaseTest extends EndPoints {
         loginObject = Utils.Maps.objectMap("session", new LoginModel(EMAIL, PASSWORD));
 
         requestSpec = new RequestSpecBuilder()
-//                .setBaseUri("https://api-de-tarefas.herokuapp.com")
                 .setBaseUri(BASE_URI)
                 .setBasePath(BASE_PATH_SESSIONS)
                 .setContentType(ContentType.JSON)
