@@ -24,7 +24,7 @@ public class ListTaskBaseTest extends EndPoints {
                 .addHeader("Authorization", token)
                 .setContentType(ContentType.JSON)
                 .build();
-        System.out.println(token);
+
         responseSpec = new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .expectContentType(ContentType.JSON)
