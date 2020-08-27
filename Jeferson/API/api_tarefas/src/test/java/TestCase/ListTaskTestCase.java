@@ -10,12 +10,11 @@ public class ListTaskTestCase extends ListTaskBaseTest {
     @Test
     public void listarTarefas(){
         given()
-                .log().all()
                 .spec(requestSpec)
         .when()
                 .get()
         .then()
-                .log().all()
+                .log().body()
                 .spec(responseSpec);
     }
 }
