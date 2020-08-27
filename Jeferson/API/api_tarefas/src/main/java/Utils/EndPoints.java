@@ -8,5 +8,6 @@ public class EndPoints {
     protected static final String BASE_URI = ObjectsUtils.getPropertiesData("caminhoEndPoints", "url");
     protected static final String BASE_PATH_USER = ObjectsUtils.getPropertiesData("caminhoEndPoints", "user");
     protected static final String BASE_PATH_SESSIONS = ObjectsUtils.getPropertiesData("caminhoEndPoints", "sessions");
+    protected static final String BASE_PATH_TASKS = ObjectsUtils.getPropertiesData("caminhoEndPoints", "task");
 
 }
