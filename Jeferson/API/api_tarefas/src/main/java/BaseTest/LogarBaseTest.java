@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 import java.util.Map;
 
-public class LoginBaseTest extends EndPoints {
+public class LogarBaseTest extends EndPoints {
 
     protected static RequestSpecification requestSpec;
     protected static ResponseSpecification responseSpec;
@@ -30,7 +30,6 @@ public class LoginBaseTest extends EndPoints {
                 .build();
 
         responseSpec = new ResponseSpecBuilder()
-                .expectStatusCode(200)
                 .expectContentType(ContentType.JSON)
                 .build();
     }
