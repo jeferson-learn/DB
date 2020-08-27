@@ -22,8 +22,6 @@ public class LoginTestCase extends LoginBaseTest {
                 .extract().path("data.attributes.auth-token");
 
         ObjectsUtils.setPropertiesData("dadosInformacao", "token", token);
-        logout();
-
     }
 
     public void logout(){
