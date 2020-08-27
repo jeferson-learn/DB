@@ -1,5 +1,6 @@
 package Suites;
 
+import TestCase.ListTaskTestCase;
 import TestCase.LoginTestCase;
 import TestCase.LogoutTestCase;
 import org.junit.platform.runner.JUnitPlatform;
@@ -9,7 +10,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 //@SelectPackages("TestCase")
-@SelectClasses({LoginTestCase.class, LogoutTestCase.class})
+@SelectClasses({LoginTestCase.class, ListTaskTestCase.class, LogoutTestCase.class})
 public class SuiteTestCase {
 
 }
