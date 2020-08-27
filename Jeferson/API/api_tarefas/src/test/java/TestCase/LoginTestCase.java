@@ -1,12 +1,12 @@
 package TestCase;
 
-import BaseTest.LoginBaseTest;
+import BaseTest.LogarBaseTest;
 import Utils.ObjectsUtils;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class LoginTestCase extends LoginBaseTest {
+public class LoginTestCase extends LogarBaseTest {
 
     @Test
     public void login(){
@@ -16,6 +16,7 @@ public class LoginTestCase extends LoginBaseTest {
         .when()
                 .post()
         .then()
+                .statusCode(200)
                 .spec(responseSpec)
                 .extract().path("data.attributes.auth-token");
 
