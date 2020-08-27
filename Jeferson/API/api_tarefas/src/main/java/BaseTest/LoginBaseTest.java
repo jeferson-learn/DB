@@ -1,6 +1,5 @@
 package BaseTest;
 
-import Models.CreateUserModel;
 import Models.LoginModel;
 import Utils.EndPoints;
 import io.restassured.builder.RequestSpecBuilder;
