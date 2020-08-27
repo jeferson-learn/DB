@@ -7,8 +7,8 @@ public class CreateTaskModel {
     private boolean done;
 
     public CreateTaskModel() {
-        title = "API 5";
-        description = "Tarefas do api 5";
+        title = "API 6";
+        description = "Tarefas do api 6";
         done = true;
     }
 
