@@ -1,0 +1,310 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "data": {
+        "id": "529",
+        "type": "tasks",
+        "attributes": {
+          "title": "API 7",
+          "description": "Tarefas do api 7",
+          "done": true,
+          "deadline": null,
+          "user-id": 4224,
+          "created-at": "2020-08-28T22:18:36.559Z",
+          "updated-at": "2020-08-28T22:18:36.559Z",
+          "short-description": "Tarefas do api 7",
+          "is-late": null
+        },
+        "relationships": {
+          "user": {
+            "data": {
+              "id": "4224",
+              "type": "users"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "$id": "#/properties/data",
+      "type": "object",
+      "title": "The data schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "id": "529",
+          "type": "tasks",
+          "attributes": {
+            "title": "API 7",
+            "description": "Tarefas do api 7",
+            "done": true,
+            "deadline": null,
+            "user-id": 4224,
+            "created-at": "2020-08-28T22:18:36.559Z",
+            "updated-at": "2020-08-28T22:18:36.559Z",
+            "short-description": "Tarefas do api 7",
+            "is-late": null
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "4224",
+                "type": "users"
+              }
+            }
+          }
+        }
+      ],
+      "required": [
+        "id",
+        "type",
+        "attributes",
+        "relationships"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/data/properties/id",
+          "type": "string",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "529"
+          ]
+        },
+        "type": {
+          "$id": "#/properties/data/properties/type",
+          "type": "string",
+          "title": "The type schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "tasks"
+          ]
+        },
+        "attributes": {
+          "$id": "#/properties/data/properties/attributes",
+          "type": "object",
+          "title": "The attributes schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "title": "API 7",
+              "description": "Tarefas do api 7",
+              "done": true,
+              "deadline": null,
+              "user-id": 4224,
+              "created-at": "2020-08-28T22:18:36.559Z",
+              "updated-at": "2020-08-28T22:18:36.559Z",
+              "short-description": "Tarefas do api 7",
+              "is-late": null
+            }
+          ],
+          "required": [
+            "title",
+            "description",
+            "done",
+            "deadline",
+            "user-id",
+            "created-at",
+            "updated-at",
+            "short-description",
+            "is-late"
+          ],
+          "properties": {
+            "title": {
+              "$id": "#/properties/data/properties/attributes/properties/title",
+              "type": "string",
+              "title": "The title schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "API 7"
+              ]
+            },
+            "description": {
+              "$id": "#/properties/data/properties/attributes/properties/description",
+              "type": "string",
+              "title": "The description schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Tarefas do api 7"
+              ]
+            },
+            "done": {
+              "$id": "#/properties/data/properties/attributes/properties/done",
+              "type": "boolean",
+              "title": "The done schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "deadline": {
+              "$id": "#/properties/data/properties/attributes/properties/deadline",
+              "type": "null",
+              "title": "The deadline schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "user-id": {
+              "$id": "#/properties/data/properties/attributes/properties/user-id",
+              "type": "integer",
+              "title": "The user-id schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": 0,
+              "examples": [
+                4224
+              ]
+            },
+            "created-at": {
+              "$id": "#/properties/data/properties/attributes/properties/created-at",
+              "type": "string",
+              "title": "The created-at schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "2020-08-28T22:18:36.559Z"
+              ]
+            },
+            "updated-at": {
+              "$id": "#/properties/data/properties/attributes/properties/updated-at",
+              "type": "string",
+              "title": "The updated-at schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "2020-08-28T22:18:36.559Z"
+              ]
+            },
+            "short-description": {
+              "$id": "#/properties/data/properties/attributes/properties/short-description",
+              "type": "string",
+              "title": "The short-description schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "Tarefas do api 7"
+              ]
+            },
+            "is-late": {
+              "$id": "#/properties/data/properties/attributes/properties/is-late",
+              "type": "null",
+              "title": "The is-late schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": null,
+              "examples": [
+                null
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "relationships": {
+          "$id": "#/properties/data/properties/relationships",
+          "type": "object",
+          "title": "The relationships schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "user": {
+                "data": {
+                  "id": "4224",
+                  "type": "users"
+                }
+              }
+            }
+          ],
+          "required": [
+            "user"
+          ],
+          "properties": {
+            "user": {
+              "$id": "#/properties/data/properties/relationships/properties/user",
+              "type": "object",
+              "title": "The user schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": {},
+              "examples": [
+                {
+                  "data": {
+                    "id": "4224",
+                    "type": "users"
+                  }
+                }
+              ],
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "$id": "#/properties/data/properties/relationships/properties/user/properties/data",
+                  "type": "object",
+                  "title": "The data schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                    {
+                      "id": "4224",
+                      "type": "users"
+                    }
+                  ],
+                  "required": [
+                    "id",
+                    "type"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$id": "#/properties/data/properties/relationships/properties/user/properties/data/properties/id",
+                      "type": "string",
+                      "title": "The id schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "4224"
+                      ]
+                    },
+                    "type": {
+                      "$id": "#/properties/data/properties/relationships/properties/user/properties/data/properties/type",
+                      "type": "string",
+                      "title": "The type schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                        "users"
+                      ]
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
