@@ -17,7 +17,7 @@ public class ValidarXMLeJSON {
         .then()
                 .log().all()
                 .statusCode(200)
-                .body(RestAssuredMatchers.matchesXsdInClasspath("users.xsd"))
+                .body(RestAssuredMatchers.matchesXsdInClasspath("Schemas/users.xsd"))
         ;
     }
 
@@ -44,7 +44,7 @@ public class ValidarXMLeJSON {
         .then()
                 .log().all()
                 .statusCode(200)
-                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("users.json"))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("Schemas/users.json"))
         ;
     }
 
