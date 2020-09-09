@@ -4,9 +4,7 @@ import Models.MovimentacaoModel;
 import barrigaFW.BaseTest;
 import io.restassured.specification.FilterableRequestSpecification;
 import org.hamcrest.Matchers;
-import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.*;
-import org.junit.runners.MethodSorters;
 import utils.DataUtils;
 
 import java.util.HashMap;
@@ -14,7 +12,6 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
-//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BarrigaTestCase extends BaseTest {
 
