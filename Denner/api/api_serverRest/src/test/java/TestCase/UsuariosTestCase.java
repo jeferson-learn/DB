@@ -1,23 +1,36 @@
 package TestCase;
 
+import BaseTest.UsuarioBaseTest;
+import Models.CreateLoginModel;
+import Utils.ObjectJson;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class UsuariosTestCase {
+import static io.restassured.RestAssured.given;
 
-    private static RequestSpecification requestSpec;
-    private static ResponseSpecification responseSpec;
+public class UsuariosTestCase extends UsuarioBaseTest {
 
-    @BeforeEach
-    public void setUp(){
-        requestSpec = new RequestSpecBuilder()
-                .setBaseUri("http://localhost:3000")
-                .setBasePath("/usuarios")
-                .setContentType(ContentType.JSON)
-                .build();
+    @Test
+    public void createUser(){
+        String ID =
+        given()
+                .log().all()
+                .spec(requestSpec)
+                .body(ObjectJson.createLoginJsonObject())
+        .when()
+                .post()
+        .then()
+                .log().body()
+                .spec(responseSpec)
+                .extract().path("_id")
+                ;
+        System.out.println("ID: " + ID);
     }
+
 
 }
