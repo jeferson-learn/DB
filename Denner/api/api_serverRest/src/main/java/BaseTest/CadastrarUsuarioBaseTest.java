@@ -8,7 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.jupiter.api.BeforeEach;
 
-public class UsuarioBaseTest extends EndPoint {
+public class CadastrarUsuarioBaseTest extends EndPoint {
 
     protected static RequestSpecification requestSpec;
     protected static ResponseSpecification responseSpec;
