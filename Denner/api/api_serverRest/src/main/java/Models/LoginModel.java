@@ -1,10 +1,8 @@
 package Models;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonRootName;
+import javax.xml.bind.annotation.XmlRootElement;
 
-//@JsonRootName(value = "login")
-@JsonPropertyOrder({"email", "password"})
+@XmlRootElement
 public class LoginModel {
 
     private String email;
@@ -13,6 +11,11 @@ public class LoginModel {
     public LoginModel(String email, String password){
         this.email = email;
         this.password = password;
+    }
+
+    public LoginModel(){
+        email = "fulano@qa.com";
+        password = "teste";
     }
 
     public String getEmail() {
@@ -29,5 +32,13 @@ public class LoginModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "LoginModel{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
