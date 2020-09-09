@@ -1,19 +1,12 @@
 package TestCase;
 
-import BaseTest.UsuarioBaseTest;
-import Models.CreateLoginModel;
+import BaseTest.CadastrarUsuarioBaseTest;
 import Utils.ObjectJson;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class CadastrarUsuariosTestCase extends UsuarioBaseTest {
+public class CadastrarUsuariosTestCase extends CadastrarUsuarioBaseTest {
 
     @Test
     public void createUser(){
