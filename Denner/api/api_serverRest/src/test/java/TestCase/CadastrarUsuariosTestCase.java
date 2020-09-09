@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class UsuariosTestCase extends UsuarioBaseTest {
+public class CadastrarUsuariosTestCase extends UsuarioBaseTest {
 
     @Test
     public void createUser(){
