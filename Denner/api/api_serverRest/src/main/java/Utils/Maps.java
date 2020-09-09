@@ -1,7 +1,5 @@
 package Utils;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,11 +11,10 @@ public class Maps {
         return createObject;
     }
 
-    @JsonPropertyOrder({"email","password"})
     public static Map<String, String> mapObjectString() {
         Map<String, String> createString = new HashMap<String, String>();
-        createString.put("email", "jeferson1@teste.com");
-        createString.put("password", "123456");
+        createString.put("email", "fulano@qa.com");
+        createString.put("password", "teste");
         return createString;
     }
 }
