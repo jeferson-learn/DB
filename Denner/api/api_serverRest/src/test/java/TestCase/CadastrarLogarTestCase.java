@@ -2,6 +2,8 @@ package TestCase;
 
 import BaseTest.CadastrarUsuarioBaseTest;
 import Utils.ObjectJson;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,21 +14,26 @@ public class CadastrarLogarTestCase extends CadastrarUsuarioBaseTest {
 
     @Test
     public void createUser() throws IOException {
-        String ID =
+//        String ID =
+        Response response =
         given()
                 .log().all()
                 .spec(requestSpec)
-                .body(ObjectJson.createLoginJsonObject())
+                .body(ObjectJson.loginTest())
         .when()
                 .post()
         .then()
                 .log().body()
                 .spec(responseSpec)
-                .extract().path("_id")
-                ;
-        System.out.println("ID: " + ID);
+                .extract().response();
 
-        Utils.ObjectsUtils.setPropertiesData("dadosUsuario", "_ID", ID);
+        String id = response.path("_id");
+        String message = response.path("message");
+
+        System.out.println("ID: " + id);
+        System.out.println("MESSAGE: " + message);
+
+        Utils.ObjectsUtils.setPropertiesData("dadosUsuario", "ID", id);
     }
 
 
