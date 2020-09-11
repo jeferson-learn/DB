@@ -3,8 +3,12 @@ package TestCase;
 import BaseTest.LoginBaseTest;
 import Models.LoginModel;
 import Utils.ObjectJson;
+import com.sun.org.glassfish.gmbal.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import org.json.JSONObject;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -16,6 +20,10 @@ import static io.restassured.RestAssured.given;
 
 public class LoginTestCase extends LoginBaseTest {
 
+    @Feature("API de Serverest 'Login'")
+    @DisplayName("LOGIN")
+    @Description("Acesso login")
+    @Issue("http://localhost:3000/login")
     @Test
     public void login() throws IOException {
 
