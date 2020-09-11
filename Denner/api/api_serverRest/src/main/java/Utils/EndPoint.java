@@ -18,5 +18,6 @@ public class EndPoint {
     protected static final String BASE_URI = ObjectsUtils.getPropertiesData("dadosEndPoint", "URI");
     protected static final String PATH_LOGIN = ObjectsUtils.getPropertiesData("dadosEndPoint", "LOGIN");
     protected static final String PATH_USUARIOS = ObjectsUtils.getPropertiesData("dadosEndPoint", "USUARIOS");
+    protected static final String PATH_PRODUTOS = ObjectsUtils.getPropertiesData("dadosEndPoint", "PRODUTOS");
 
 }
