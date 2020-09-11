@@ -1,7 +1,10 @@
 package TestCase;
 
 import BaseTest.UsuarioBaseTest;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
 
 import static io.restassured.RestAssured.*;
 
@@ -28,6 +31,7 @@ public class ListaUsuarioTestCase extends UsuarioBaseTest {
         .then()
                 .log().body()
                 .statusCode(200)
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "ListaUsuarioJsonSchemas.json"))
                 .spec(responseSpec);
     }
 }
