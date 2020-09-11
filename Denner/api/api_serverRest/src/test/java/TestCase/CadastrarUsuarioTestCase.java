@@ -3,9 +3,11 @@ package TestCase;
 import BaseTest.CadastrarUsuarioBaseTest;
 import Utils.ObjectJson;
 import io.restassured.RestAssured;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
@@ -17,7 +19,7 @@ public class CadastrarUsuarioTestCase extends CadastrarUsuarioBaseTest {
 //        String ID =
         Response response =
         given()
-                .log().all()
+                .log().body()
                 .spec(requestSpec)
                 .body(ObjectJson.criarUsuario())
         .when()
@@ -25,6 +27,7 @@ public class CadastrarUsuarioTestCase extends CadastrarUsuarioBaseTest {
         .then()
                 .log().body()
                 .spec(responseSpec)
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "CadastrarUsuarioJsonSchemas.json"))
                 .extract().response();
 
         String id = response.path("_id");
