@@ -3,9 +3,11 @@ package TestCase;
 import BaseTest.LoginBaseTest;
 import Models.LoginModel;
 import Utils.ObjectJson;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +37,7 @@ public class LoginTestCase extends LoginBaseTest {
         .then()
                 .log().body()
                 .spec(responseSpec)
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "LoginUsuarioJsonSchemas.json"))
                 .extract().path("authorization");
 
         Utils.ObjectsUtils.setPropertiesData("dadosUsuario", "TOKEN", TOKEN);
