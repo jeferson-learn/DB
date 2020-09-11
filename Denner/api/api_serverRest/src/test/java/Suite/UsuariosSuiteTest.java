@@ -7,6 +7,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses({CadastrarUsuarioTestCase.class, LoginTestCase.class, ListaUsuarioTestCase.class, EditarUsuarioTestCase.class, DeletarUsuario.class})
-public class SuiteTest {
+public class UsuariosSuiteTest {
 
 }
