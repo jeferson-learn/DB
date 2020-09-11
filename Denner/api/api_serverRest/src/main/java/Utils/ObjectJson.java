@@ -16,15 +16,13 @@ public class ObjectJson extends EndPoint {
 
     public static String loginTest(){
         JSONObject login = new JSONObject();
-        login.put("nome", createNome);
         login.put("email", createEmail);
         login.put("password", createPassword);
-        login.put("administrador", createAdm);
 
         return login.toString();
     }
 
-    public static String loginExisteJsonObject(){
+    public static String loginExiste(){
 
         JSONObject login = new JSONObject();
         login.put("email", email);
@@ -33,7 +31,7 @@ public class ObjectJson extends EndPoint {
         return login.toString();
     }
 
-    public static String createLoginJsonObject(){
+    public static String criarUsuario(){
 
         JSONObject login = new JSONObject();
         login.put("nome", createNome);
@@ -44,31 +42,11 @@ public class ObjectJson extends EndPoint {
         return login.toString();
     }
 
-    public static String loginNewJsonObject(){
-
-        JSONObject login = new JSONObject();
-        login.put("email", createEmail);
-        login.put("password", createPassword);
-
-        return login.toString();
-    }
-
-    public static String createUser(){
-
-        JSONObject login = new JSONObject();
-        login.put("nome", "Jeferson Lopes Eugenio");
-        login.put("email", "jeferson1@teste.com");
-        login.put("password", "123456");
-        login.put("administrador", "true");
-
-        return login.toString();
-    }
-
     public static String editUser(){
 
         JSONObject login = new JSONObject();
         login.put("nome", "Jeferson Nascimento Eugenio");
-        login.put("email", "jeferson1@teste.com");
+        login.put("email", "jefy1@teste.com");
         login.put("password", "123456");
         login.put("administrador", "true");
 
