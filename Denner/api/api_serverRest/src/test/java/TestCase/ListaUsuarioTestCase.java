@@ -1,7 +1,11 @@
 package TestCase;
 
 import BaseTest.UsuarioBaseTest;
+import com.sun.org.glassfish.gmbal.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -10,6 +14,10 @@ import static io.restassured.RestAssured.*;
 
 public class ListaUsuarioTestCase extends UsuarioBaseTest {
 
+    @Feature("API de Serverest 'Lista usuario'")
+    @DisplayName("LISTA USUARIO")
+    @Description("Lista dado do usuario")
+    @Issue("http://localhost:3000/usuarios")
     @Test
     public void listaUsuario(){
 
