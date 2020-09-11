@@ -4,12 +4,14 @@ import BaseTest.CadastrarUsuarioBaseTest;
 import Utils.ObjectJson;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
 
-public class CadastrarUsuariosTestCase extends CadastrarUsuarioBaseTest {
+public class CadastrarLogarTestCase extends CadastrarUsuarioBaseTest {
 
     @Test
-    public void createUser(){
+    public void createUser() throws IOException {
         String ID =
         given()
                 .log().all()
@@ -23,6 +25,8 @@ public class CadastrarUsuariosTestCase extends CadastrarUsuarioBaseTest {
                 .extract().path("_id")
                 ;
         System.out.println("ID: " + ID);
+
+        Utils.ObjectsUtils.setPropertiesData("dadosUsuario", "_ID", ID);
     }
 
 
