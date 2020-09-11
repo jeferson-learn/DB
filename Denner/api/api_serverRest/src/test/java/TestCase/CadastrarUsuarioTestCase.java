@@ -2,18 +2,25 @@ package TestCase;
 
 import BaseTest.CadastrarUsuarioBaseTest;
 import Utils.ObjectJson;
-import io.restassured.RestAssured;
+import com.sun.org.glassfish.gmbal.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 public class CadastrarUsuarioTestCase extends CadastrarUsuarioBaseTest {
 
+    @Feature("API de Serverest 'Criar usuario'")
+    @DisplayName("CRIAR USUARIO")
+    @Description("Cria dado do usuario")
+    @Issue("http://localhost:3000/usuarios")
     @Test
     public void createUser() throws IOException {
 //        String ID =
