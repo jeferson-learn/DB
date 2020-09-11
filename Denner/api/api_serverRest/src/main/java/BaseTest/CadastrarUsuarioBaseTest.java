@@ -15,12 +15,18 @@ public class CadastrarUsuarioBaseTest extends EndPoint {
 
     @BeforeEach
     public void setUp(){
+        requestLogin();
+        responseLogin();
+    }
+
+    public void requestLogin() {
         requestSpec = new RequestSpecBuilder()
                 .setBaseUri(BASE_URI)
                 .setBasePath(PATH_USUARIOS)
                 .setContentType(ContentType.JSON)
                 .build();
-
+    }
+    public void responseLogin(){
         responseSpec = new ResponseSpecBuilder()
                 .expectStatusCode(201)
                 .build();
