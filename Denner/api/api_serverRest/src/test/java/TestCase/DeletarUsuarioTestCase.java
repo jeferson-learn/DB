@@ -1,7 +1,6 @@
 package TestCase;
 
 import BaseTest.UsuarioBaseTest;
-import Utils.ObjectJson;
 import com.sun.org.glassfish.gmbal.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
@@ -13,7 +12,7 @@ import java.io.File;
 
 import static io.restassured.RestAssured.given;
 
-public class DeletarUsuario extends UsuarioBaseTest {
+public class DeletarUsuarioTestCase extends UsuarioBaseTest {
 
     @Feature("API de Serverest 'Deleta usuario'")
     @DisplayName("DELETAR USUARIO")
@@ -31,6 +30,7 @@ public class DeletarUsuario extends UsuarioBaseTest {
                 .pathParam("id", id)
         .when()
                 .delete("/{id}")
+//                .delete("/ujQHcot134QuB10c")
         .then()
                 .log().body()
                 .statusCode(200)

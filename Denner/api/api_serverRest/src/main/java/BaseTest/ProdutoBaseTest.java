@@ -1,5 +1,6 @@
 package BaseTest;
 
+import Models.ProdutoModel;
 import Utils.EndPoint;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -12,6 +13,7 @@ public class ProdutoBaseTest extends EndPoint {
 
     protected static RequestSpecification requestSpec;
     protected static ResponseSpecification responseSpec;
+//    private ProdutoModel produtoModel = new ProdutoModel();
 
     @BeforeEach
     public void setUp(){
@@ -24,12 +26,12 @@ public class ProdutoBaseTest extends EndPoint {
                 .setBaseUri(BASE_URI)
                 .setBasePath(PATH_PRODUTOS)
                 .setContentType(ContentType.JSON)
+//                .setBody(produtoModel)
                 .build();
     }
 
     public void response() {
         responseSpec = new ResponseSpecBuilder()
-                .expectStatusCode(200)
                 .expectContentType(ContentType.JSON)
                 .build();
     }
