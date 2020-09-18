@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         CadastrarProdutoTestCase.class,
         ListasProdutosTestCase.class,
         EditarProdutoTestCase.class,
-        DeletarProdutoTestCase.class,
+        DeletarProdutoSuiteTestCase.class,
         DeletarUsuarioTestCase.class
 })
 public class ProdutosSuiteTestCase {
