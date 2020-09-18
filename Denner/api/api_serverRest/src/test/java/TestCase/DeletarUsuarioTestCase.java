@@ -30,7 +30,6 @@ public class DeletarUsuarioTestCase extends UsuarioBaseTest {
                 .pathParam("id", id)
         .when()
                 .delete("/{id}")
-//                .delete("/ujQHcot134QuB10c")
         .then()
                 .log().body()
                 .statusCode(200)
