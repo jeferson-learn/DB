@@ -35,17 +35,20 @@ public class CadastrarCarrinhoTestCase extends CarrinhoBaseTest {
         System.out.println("Cadastrar carrinho");
 
         String token = Utils.ObjectsUtils.getPropertiesData("dadosUsuario", "TOKEN");
+        String idProduto = Utils.ObjectsUtils.getPropertiesData("dadosProduto", "ID");
+
 
 //============================================================================================================
         /*OK*/
-//        String produtos = "{\n" +
-//                "  \"produtos\": [\n" +
-//                "    {\n" +
+        String produtos = "{\n" +
+                "  \"produtos\": [\n" +
+                "    {\n" +
 //                "      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\n" +
-//                "      \"quantidade\": 2\n" +
-//                "    }\n" +
-//                "  ]\n" +
-//                "}";
+                "      \"idProduto\": \"" + idProduto + "\",\n" +
+                "      \"quantidade\": 2\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
 
 //============================================================================================================
         /*ERRO*/
@@ -99,10 +102,10 @@ public class CadastrarCarrinhoTestCase extends CarrinhoBaseTest {
                         .log().body()
                         .spec(requestSpec)
                         .header("authorization", token)
-//                        .body(produtos)
+                        .body(produtos)
 //                        .body(jsonObjectToPost)
 //                        .body(finalReqString)
-                        .body(printjsonarray)
+//                        .body(printjsonarray)
                 .when()
                         .post()
                 .then()
