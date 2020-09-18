@@ -40,15 +40,25 @@ public class CadastrarCarrinhoTestCase extends CarrinhoBaseTest {
 
 //============================================================================================================
         /*OK*/
-        String produtos = "{\n" +
-                "  \"produtos\": [\n" +
-                "    {\n" +
-//                "      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\n" +
-                "      \"idProduto\": \"" + idProduto + "\",\n" +
-                "      \"quantidade\": 2\n" +
-                "    }\n" +
-                "  ]\n" +
-                "}";
+//        String produto1 = "{\n" +
+//                "  \"produtos\": [\n" +
+//                "    {\n" +
+//                "      \"idProduto\": \"" + idProduto + "\",\n" +
+//                "      \"quantidade\": 2\n" +
+//                "    }\n" +
+//                "  ]\n" +
+//                "}";
+
+        /*Nao da para mais adicionar e so um vez por rodar cima produto1*/
+
+//        String produtos2 = "{\n" +
+//                "  \"produtos\": [\n" +
+//                "    {\n" +
+//                "      \"idProduto\": \"K6leHdftCeOJj8BJ\",\n" +
+//                "      \"quantidade\": 2\n" +
+//                "    }\n" +
+//                "  ]\n" +
+//                "}";
 
 //============================================================================================================
         /*ERRO*/
@@ -67,30 +77,30 @@ public class CadastrarCarrinhoTestCase extends CarrinhoBaseTest {
 
 //============================================================================================================
         /*OK*/
-//        ObjectMapper mapper = new ObjectMapper();
-//        CadastrarCarrinhoModel itens1 = new CadastrarCarrinhoModel("BeeJh5lz3k6kSIzA", 2);
-//        CadastrarCarrinhoModel itens2 = new CadastrarCarrinhoModel("K6leHdftCeOJj8BJ", 2);
-//        Object[] objectsArray = {itens1, itens2};
-//
-//        String reqJson = null;
-//        List<String> tagData = new ArrayList<String>();
-//
-//        for(Object obj : objectsArray){
-//            reqJson = mapper.writeValueAsString(obj);
-////            System.out.println("Teste0: " +reqJson);
-//            tagData.add(reqJson);
-//        }
-//
-////        System.out.println("Teste1: " + tagData);
-//
-//        HashMap<String,List<String>> finalReq = new HashMap<String, List<String>>();
-//        finalReq.put("\"produtos\":", tagData);
-//
-//        String finalReqString = finalReq.toString();
-////        System.out.println("Teste2: " + finalReqString);
-//
-//        finalReqString = finalReqString.replace("=", " ");
-////        System.out.println("Teste3: " +finalReqString);
+        ObjectMapper mapper = new ObjectMapper();
+        CadastrarCarrinhoModel itens1 = new CadastrarCarrinhoModel(idProduto, 2);
+        CadastrarCarrinhoModel itens2 = new CadastrarCarrinhoModel("K6leHdftCeOJj8BJ", 2);
+        Object[] objectsArray = {itens1, itens2};
+
+        String reqJson = null;
+        List<String> tagData = new ArrayList<String>();
+
+        for(Object obj : objectsArray){
+            reqJson = mapper.writeValueAsString(obj);
+//            System.out.println("Teste0: " +reqJson);
+            tagData.add(reqJson);
+        }
+
+//        System.out.println("Teste1: " + tagData);
+
+        HashMap<String,List<String>> finalReq = new HashMap<String, List<String>>();
+        finalReq.put("\"produtos\":", tagData);
+
+        String finalReqString = finalReq.toString();
+//        System.out.println("Teste2: " + finalReqString);
+
+        finalReqString = finalReqString.replace("=", " ");
+//        System.out.println("Teste3: " +finalReqString);
 //============================================================================================================
 
 
@@ -102,16 +112,15 @@ public class CadastrarCarrinhoTestCase extends CarrinhoBaseTest {
                         .log().body()
                         .spec(requestSpec)
                         .header("authorization", token)
-                        .body(produtos)
+//                        .body(produto1)
 //                        .body(jsonObjectToPost)
-//                        .body(finalReqString)
-//                        .body(printjsonarray)
+                        .body(finalReqString)
                 .when()
                         .post()
                 .then()
                         .log().body()
                         .statusCode(201)
-//                        .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "CadastrarProdutoJsonSchemas.json"))
+                        .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "CadastrarCarrinhoJsonSchemas.json"))
                         .spec(responseSpec)
                         .extract().path("_id");
 
