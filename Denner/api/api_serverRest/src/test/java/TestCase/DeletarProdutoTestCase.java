@@ -32,7 +32,6 @@ public class DeletarProdutoTestCase extends ProdutoBaseTest {
                 .pathParam("id", id)
         .when()
                 .delete("/{id}")
-//                .delete()
         .then()
                 .log().body()
                 .statusCode(200)
