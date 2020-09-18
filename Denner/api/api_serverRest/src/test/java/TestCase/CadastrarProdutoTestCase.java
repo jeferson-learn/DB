@@ -34,8 +34,6 @@ public class CadastrarProdutoTestCase extends ProdutoBaseTest {
                 .spec(requestSpec)
                 .header("authorization", token)
                 .body(produtoModel)
-//                .queryParam("_id", id)
-//                .queryParam("_id", "K6leHdftCeOJj8BJ")
         .when()
                 .post()
         .then()
