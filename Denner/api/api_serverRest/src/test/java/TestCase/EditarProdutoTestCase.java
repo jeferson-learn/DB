@@ -34,8 +34,6 @@ public class EditarProdutoTestCase extends ProdutoBaseTest {
                 .spec(requestSpec)
                 .header("Authorization", token)
                 .queryParam("_id", id)
-//                .pathParam("id", "elS3I3Oru6BNQwsd")
-//                .queryParam("_id", "K6leHdftCeOJj8BJ")
                 .body(editarProdutoModel)
         .when()
                 .put(id)
