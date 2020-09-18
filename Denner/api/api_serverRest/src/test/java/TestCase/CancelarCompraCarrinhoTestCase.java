@@ -4,8 +4,11 @@ import BaseTest.CarrinhoBaseTest;
 import com.sun.org.glassfish.gmbal.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
 
 import static io.restassured.RestAssured.given;
 
@@ -30,7 +33,7 @@ public class CancelarCompraCarrinhoTestCase extends CarrinhoBaseTest {
             .then()
                     .log().body()
                     .statusCode(200)
-//                        .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "CadastrarProdutoJsonSchemas.json"))
+                        .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas" + File.separator + "CancelarComprarCarrinhoJsonSchemas.json"))
                     .spec(responseSpec);
 
     }
