@@ -21,21 +21,12 @@ public class ListasProdutosTestCase extends ProdutoBaseTest {
     @Test
     public void listaProduto(){
 
-        System.out.println("Produto usuario");
-
-        String id = Utils.ObjectsUtils.getPropertiesData("dadosUsuario", "ID");
-        String token = Utils.ObjectsUtils.getPropertiesData("dadosUsuario", "TOKEN");
+        System.out.println("Lista produto usuario");
 
         given()
                 .spec(requestSpec)
-//                .header("Authorization", token)
-//                .queryParam("_id", id)
-//                .pathParam("teste", "elS3I3Oru6BNQwsd") // path
-//                .queryParam("_id", "elS3I3Oru6BNQwsd") // query
         .when()
-//                .get("/elS3I3Oru6BNQwsd") // direto
-//                .get("/{teste}") // path
-                .get() // query
+                .get()
         .then()
                 .log().body()
                 .statusCode(200)
