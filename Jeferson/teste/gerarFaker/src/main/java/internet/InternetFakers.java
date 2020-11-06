@@ -13,10 +13,16 @@ public class InternetFakers {
     private String teste2;
     private String teste3;
     private String teste4;
+    private boolean teste5;
 
 
     public InternetFakers(){
         faker = new Faker(new Locale("pt-BR"));
+    }
+
+    public boolean getBoolean(){
+        teste5 = faker.bool().bool();
+        return teste5;
     }
 
     public String getEmail1() {
